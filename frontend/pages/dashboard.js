@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import ActionButton from "./components/button";
+import NavBar from "./components/navbar";
 
 export default function Dashboard() {
   const [balance, setBalance] = useState("");

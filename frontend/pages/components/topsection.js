@@ -7,13 +7,13 @@ export default function TopSection() {
     paperContainer: {
       backgroundImage: `url(/background_1.png)`,
       backgroundRepeat: "no-repeat",
-      width: { md: "50%", sm: "100%", xs: "100%" },
-      height: { md: "450px", xs: "400px" }
+      width: { md: "100%", sm: "100%", xs: "100%" },
+      height: { lg: "100%", md: "450px", xs: "400px" }
     },
     textContainer: {
       p: 3,
       bgcolor: "#FFFFE0",
-      width: { lg: "50%" },
+      width: { md: "100%" },
       textAlign: "center"
     }
   };
@@ -21,14 +21,17 @@ export default function TopSection() {
     <>
       <Box>
         <Box sx={{ display: "flex", flexDirection: { md: "row", sm: "column", xs: "column" } }}>
-          <Paper sx={styles.paperContainer} />
+          <Paper sx={styles.paperContainer}>
+            <Box sx={{ p: 3, width: { lg: "50%", md: "60%" }, textAlign: "center" }}>
+              <Typography variant="h2" sx={{ color: "#00008B", fontFamily: "cursive", pb: 3, pt: 2, fontSize: "4rem" }}>
+                Leap Bank
+              </Typography>
+              <Typography variant="h4" sx={{ fontStyle: "italic", fontFamily: "lucida handwriting", color: "#6A5ACD" }}>
+                ...the bank of the future
+              </Typography>
+            </Box>
+          </Paper>
           <Box sx={styles.textContainer}>
-            <Typography variant="h2" sx={{ color: "#00008B", fontFamily: "cursive", pb: 3, fontSize: "4rem" }}>
-              Leap Bank
-            </Typography>
-            <Typography variant="h4" sx={{ fontStyle: "italic", fontFamily: "lucida handwriting", color: "#6A5ACD" }}>
-              ...the bank of the future
-            </Typography>
             <Typography
               variant="h6"
               sx={{ textAlign: "left", fontSize: "1.8rem", pt: 3, color: "#4B0082", fontFamily: "Helvetica" }}
@@ -38,9 +41,7 @@ export default function TopSection() {
             </Typography>
           </Box>
         </Box>
-        <Box>
-          <ServicesSection />
-        </Box>
+        <ServicesSection />
       </Box>
     </>
   );

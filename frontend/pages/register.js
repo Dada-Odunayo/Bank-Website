@@ -3,6 +3,7 @@ import ActionButton from "./components/button";
 import { Box, Typography, FormGroup, TextField, Select, MenuItem, Link } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function RegisterPage() {
   const [fname, setfName] = useState("");
@@ -37,6 +38,9 @@ export default function RegisterPage() {
 
   return (
     <>
+      <Head>
+        <title>Registration Page</title>
+      </Head>
       <Box sx={{ alignContent: "center", p: { xl: 20, lg: 10, md: 5, sm: 0, xs: 0 }, bgcolor: "#696969" }}>
         <Box
           sx={{

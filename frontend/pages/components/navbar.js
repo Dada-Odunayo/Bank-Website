@@ -20,7 +20,7 @@ export default function NavBar() {
                   component="div"
                   sx={{
                     color: "#fff",
-                    pt: { lg: 2, sm: 3, xs: 0 },
+                    pt: { lg: 4, sm: 1, xs: 0 },
                     pl: { md: 2 },
                     fontSize: { lg: "3rem", md: "2rem", sm: "1.5rem" }
                   }}
@@ -44,7 +44,7 @@ export default function NavBar() {
                       sx={{
                         textDecoration: "none",
                         fontWeight: "bolder",
-                        fontSize: { sm: "2rem", xs: "1rem" },
+                        fontSize: { sm: "1.5rem", xs: "1rem" },
                         color: "#eee"
                       }}
                       href={page.link}

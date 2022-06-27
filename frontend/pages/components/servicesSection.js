@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Card, CardMedia } from "@mui/material";
+import { Box, Typography, CardMedia } from "@mui/material";
 
 const sections = [
   {
@@ -20,19 +20,22 @@ const sections = [
 
   {
     id: "3",
-    heading: "Deposit money",
-    desc: "Rather than driving to a bank branch and waiting in line, you may be able to deposit cheques online in minutes",
-    link: "/depositmoney.jpg"
+    heading: "Deposit Money",
+    desc:
+      "Rather than driving to a bank branch and waiting in line, you may be able to deposit cheques online in minutes with a few clicks you are good to go",
+    link: "/onlinepayment.jpg"
   }
 ];
 
 export default function ServicesSection() {
   const styles = {
     servicesContainer: {
-      width: { md: "50%", sm: "100%", xs: "100%" },
-      height: { md: "300px", xs: "500px" },
-      m: { md: 3 },
-      bgcolor: "#800080"
+      width: { lg: "80%", md: "100%", sm: "100%", xs: "100%" },
+      height: { lg: "200px", md: "300px", xs: "400px" },
+      m: { lg: 0, md: 3 },
+
+      bgcolor: "#800080",
+      borderRadius: 2
     }
   };
   return (
@@ -51,15 +54,32 @@ export default function ServicesSection() {
       </Typography>
       <Box>
         {sections.map(section => (
-          <Box sx={{ display: "flex", bgcolor: "#eee" }} key={section.id}>
-            <Box>
-              <CardMedia component="img" sx={styles.servicesContainer} src={section.link} alt="services" />
+          <Box
+            sx={{ display: "flex", flexDirection: { xs: "column", md: "row", lg: "row" }, bgcolor: "#eee" }}
+            key={section.id}
+          >
+            <Box sx={{ width: { lg: "100%", md: "30%", sm: "100%" }, p: { lg: 3, xs: 1 } }}>
+              <CardMedia component="img" sx={styles.servicesContainer} src={section.link} alt="services image" />
             </Box>
-            <Box sx={{ width: { md: "55%" }, p: 2, m: 2, bgcolor: "#eee" }}>
-              <Typography sx={{ color: "#9932CC", fontSize: "5rem", fontFamily: "Brush Script MT", textAlign: "center" }}>
+            <Box
+              sx={{
+                width: { lg: "100%", md: "70%", xs: "100%" },
+                p: { lg: 1, xs: 1 },
+                m: { lg: 1, xs: 1 },
+                bgcolor: "#eee"
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#9932CC",
+                  fontSize: "3rem",
+                  fontFamily: "Brush Script MT",
+                  textAlign: "center"
+                }}
+              >
                 {section.heading}
               </Typography>
-              <Typography sx={{ color: "#4169E1", fontSize: "1.5rem", textAlign: "center", fontFamily: "Verdana" }}>
+              <Typography sx={{ color: "#4169E1", fontSize: "1.5rem", textAlign: "left", fontFamily: "Verdana" }}>
                 {section.desc}
               </Typography>
             </Box>

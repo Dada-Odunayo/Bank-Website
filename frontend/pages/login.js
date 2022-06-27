@@ -3,6 +3,7 @@ import { Box, TextField, Typography, Link } from "@mui/material";
 import ActionButton from "./components/button";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -35,7 +36,10 @@ export default function LoginPage() {
 
   return (
     <>
-      <Box sx={{ bgcolor: "#696969", p: { lg: 20 }, alignContent: "center" }}>
+      <Head>
+        <title>Login Page</title>
+      </Head>
+      <Box sx={{ bgcolor: "#696969", p: { lg: 30 }, justifyContent: "right", alignItems: "center" }}>
         <Box
           sx={{
             display: "flex",
